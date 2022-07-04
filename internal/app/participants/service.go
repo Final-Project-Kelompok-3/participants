@@ -80,7 +80,7 @@ func (s *service) Update(ctx context.Context, ID uint, payload *dto.UpdatePartic
 	var data = make(map[string]interface{})
 
 	if payload.Name != nil {
-		data["title"] = payload.Name
+		data["name"] = payload.Name
 	}
 	if payload.NISN != nil {
 		data["NISN"] = payload.NISN

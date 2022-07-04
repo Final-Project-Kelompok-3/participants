@@ -6,7 +6,7 @@ type CreateRegistrationParticipantsRequest struct {
 	NISN             string `json:"nisn" validate:"required"`
 	FinalReportScore int    `json:"final_report_score" validate:"required"`
 	Email            string `json:"email" validate:"required,email"`
-	FileRequirement  string `json:"filerequirement" validate:"required"`
+	FileRequirement  string `json:"file_requirement" validate:"required"`
 }
 
 type UpdateParticipantsRequest struct {
