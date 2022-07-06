@@ -1,13 +1,13 @@
-package user
+package participants
 
 import (
+	"net/http"
 	"strconv"
 
 	res "github.com/Final-Project-Kelompok-3/participants/pkg/util/response"
 
 	"github.com/Final-Project-Kelompok-3/participants/internal/dto"
 	"github.com/Final-Project-Kelompok-3/participants/internal/factory"
-	_ "github.com/go-playground/validator/v10"
 	"github.com/labstack/echo/v4"
 )
 
@@ -37,17 +37,15 @@ func (h *handler) Get(c echo.Context) error {
 		return res.ErrorResponse(err).Send(c)
 	}
 
-	return res.CustomSuccessBuilder(200, result.Datas, "Get users success", &result.PaginationInfo).Send(c)
+	return res.CustomSuccessBuilder(http.StatusOK, result.Datas, "Get participants success", &result.PaginationInfo).Send(c)
 }
 
 func (h *handler) GetByID(c echo.Context) error {
 
 	payload := new(dto.ByIDRequest)
-
 	if err := c.Bind(payload); err != nil {
 		return res.ErrorBuilder(&res.ErrorConstant.BadRequest, err).Send(c)
 	}
-
 	if err := c.Validate(payload); err != nil {
 		response := res.ErrorBuilder(&res.ErrorConstant.Validation, err)
 		return response.Send(c)
@@ -63,12 +61,10 @@ func (h *handler) GetByID(c echo.Context) error {
 
 func (h *handler) Create(c echo.Context) error {
 
-	payload := new(dto.CreateUserRequest)
-
+	payload := new(dto.CreateRegistrationParticipantsRequest)
 	if err := c.Bind(payload); err != nil {
 		return res.ErrorBuilder(&res.ErrorConstant.BadRequest, err).Send(c)
 	}
-
 	if err := c.Validate(payload); err != nil {
 		response := res.ErrorBuilder(&res.ErrorConstant.Validation, err)
 		return response.Send(c)
@@ -84,7 +80,7 @@ func (h *handler) Create(c echo.Context) error {
 
 func (h *handler) Update(c echo.Context) error {
 
-	payload := new(dto.UpdateUserRequest)
+	payload := new(dto.UpdateParticipantsRequest)
 	if err := c.Bind(payload); err != nil {
 		return res.ErrorBuilder(&res.ErrorConstant.BadRequest, err).Send(c)
 	}

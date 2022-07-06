@@ -11,8 +11,9 @@ import (
 
 // please add new model in next index for consistency migrate and rollback
 var tables = []interface{}{
-	&model.Role{},
-	&model.User{},
+	// &model.Role{},
+	// &model.User{},
+	&model.Participants{},
 }
 
 func Migrate() {
