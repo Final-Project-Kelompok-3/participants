@@ -9,11 +9,11 @@ import (
 type RegistrationPeriods struct {
 	Model
 
-	SchoolsID           int       `json:"school_id" gorm:"size:5;not null;unique"`
-	RegistrationPriceID int       `json:"registration_price_id" gorm:"size:5;not null;unique"`
-	StartDate           time.Time `json:"start_date" gorm:"size:30;not null"`
-	EndDate             time.Time `json:"end_date" gorm:"size:30;not null"`
-	Description         string    `json:"description" gorm:"size:300;not null"`
+	SchoolsID            int       `json:"schools_id" gorm:"size:5;not null;unique"`
+	RegistrationPricesID int       `json:"registration_prices_id" gorm:"size:5;not null;unique"`
+	StartDate            time.Time `json:"start_date" gorm:"size:30;not null"`
+	EndDate              time.Time `json:"end_date" gorm:"size:30;not null"`
+	Description          string    `json:"description" gorm:"size:300;not null"`
 
 	Schools Schools `gorm:"references:Schools;constraint:OnUpdate:CASCADE,OnDelete:SET NULL;"`
 }

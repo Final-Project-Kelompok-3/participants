@@ -9,7 +9,7 @@ import (
 type Schools struct {
 	Model
 
-	LevelsID int    `json:"level_id" gorm:"size:3;not null;unique"`
+	LevelsID int    `json:"levels_id" gorm:"size:3;not null;unique"`
 	Name     string `json:"name" gorm:"size:255;not null;unique"`
 	Address  string `json:"address" gorm:"size:255;not null"`
 

@@ -10,7 +10,7 @@ type FileRequirements struct {
 	Model
 
 	Name          string `json:"nisn" gorm:"size:40;not null"`
-	FileExtension string `json:"final_report_score" gorm:"size:5;not null"`
+	FileExtension string `json:"file_extension" gorm:"size:5;not null"`
 }
 
 // BeforeCreate is a method for struct Role
