@@ -7,9 +7,9 @@ type CreateRegistrationPricesRequest struct {
 }
 
 type UpdateRegistrationPricesRequest struct {
-	RegistrationFee int `json:"registration_fee" validate:"required"`
-	SystemChange    int `json:"system_change" validate:"required"`
-	Total           int `json:"total" validate:"required"`
+	RegistrationFee *int `json:"registration_fee" validate:"required"`
+	SystemChange    *int `json:"system_change" validate:"required"`
+	Total           *int `json:"total" validate:"required"`
 }
 
 type RegistrationPricesResponse struct {

@@ -83,7 +83,7 @@ func (s *service) Update(ctx context.Context, ID uint, payload *dto.UpdatePartic
 		data["name"] = payload.Name
 	}
 	if payload.NISN != nil {
-		data["NISN"] = payload.NISN
+		data["nisn"] = payload.NISN
 	}
 
 	err := s.ParticipantsRepository.Update(ctx, ID, data)
