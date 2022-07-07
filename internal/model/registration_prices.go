@@ -9,9 +9,9 @@ import (
 type RegistrationPrices struct {
 	Model
 
-	RegistrationFee int `json:"registration_fee" gorm:"size:10;not null"`
-	SystemChange    int `json:"system_change" gorm:"size:10;not null;unique"`
-	Total           int `json:"total" gorm:"size:10;not null;unique"`
+	RegistrationFee int64 `json:"registration_fee" gorm:"size:10;not null"`
+	SystemChange    int64 `json:"system_change" gorm:"size:10;not null;unique"`
+	Total           int64 `json:"total" gorm:"not null;unique"`
 }
 
 // BeforeCreate is a method for struct Role

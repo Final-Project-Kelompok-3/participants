@@ -15,7 +15,8 @@ type RegistrationPeriods struct {
 	EndDate              time.Time `json:"end_date" gorm:"size:30;not null"`
 	Description          string    `json:"description" gorm:"size:300;not null"`
 
-	Schools Schools `gorm:"references:Schools;constraint:OnUpdate:CASCADE,OnDelete:SET NULL;"`
+	Schools            Schools            `gorm:"foreignKey:schools_id;constraint:OnUpdate:CASCADE,OnDelete:SET NULL;"`
+	RegistrationPrices RegistrationPrices `gorm:"foreignKey:registration_prices_id;constraint:OnUpdate:CASCADE,OnDelete:SET NULL;"`
 }
 
 // BeforeCreate is a method for struct Role

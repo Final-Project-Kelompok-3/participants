@@ -9,11 +9,11 @@ import (
 type Schools struct {
 	Model
 
-	LevelsID int    `json:"levels_id" gorm:"size:3;not null;unique"`
+	LevelsID uint   `json:"levels_id" gorm:"size:3;not null;unique"`
 	Name     string `json:"name" gorm:"size:255;not null;unique"`
 	Address  string `json:"address" gorm:"size:255;not null"`
 
-	Levels Levels `gorm:"references:Levels;constraint:OnUpdate:CASCADE,OnDelete:SET NULL;"`
+	Levels Levels `gorm:"foreignKey:levels_id;constraint:OnUpdate:CASCADE,OnDelete:CASCADE;"`
 }
 
 // BeforeCreate iså a method for struct Role

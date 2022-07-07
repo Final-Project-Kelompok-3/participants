@@ -62,7 +62,7 @@ func (s *service) Create(ctx context.Context, payload *dto.CreateSchoolsRequest)
 	var schools = model.Schools{
 		Name:     payload.Name,
 		Address:  payload.Address,
-		LevelsID: payload.LevelsID,
+		LevelsID: uint(payload.LevelsID),
 	}
 
 	err := s.SchoolsRepository.Create(ctx, schools)
