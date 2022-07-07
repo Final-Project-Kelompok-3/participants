@@ -1,6 +1,7 @@
 package middleware
 
 import (
+	"fmt"
 	"net/http"
 	"os"
 
@@ -8,9 +9,11 @@ import (
 )
 
 func Authentication(next echo.HandlerFunc) echo.HandlerFunc {
+
 	return func(c echo.Context) error {
-		if (len(c.Request().Header["Api-Key"]) > 0) {
-			if (c.Request().Header["Api-Key"][0] == os.Getenv("API_KEY")) {
+		fmt.Println(c.Request().Header)
+		if len(c.Request().Header["Api-Key"]) > 0 {
+			if c.Request().Header["Api-Key"][0] == os.Getenv("API_KEY") {
 				return next(c)
 			}
 		}

@@ -9,7 +9,7 @@ import (
 type FileRequirements struct {
 	Model
 
-	Name          string `json:"nisn" gorm:"size:40;not null;unique"`
+	Name          string `json:"nisn" gorm:"size:40;not null"`
 	FileExtension string `json:"final_report_score" gorm:"size:5;not null"`
 }
 

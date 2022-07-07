@@ -9,12 +9,12 @@ import (
 type Participants struct {
 	Model
 
-	Name             string `json:"name" gorm:"size:200;not null;unique"`
-	Address          string `json:"address" gorm:"size:200;not null;unique"`
-	NISN             string `json:"nisn" gorm:"size:200;not null;unique"`
-	FinalReportScore int    `json:"final_report_score" gorm:"size:200;not null;unique"`
-	Email            string `json:"email" validate:"email" gorm:"size:200;not null;unique"`
-	FileRequirement  string `json:"file_requirement" gorm:"size:200;not null;unique"`
+	Name             string `json:"name" gorm:"size:200;not null"`
+	Address          string `json:"address" gorm:"size:200;not null"`
+	NISN             string `json:"nisn" gorm:"size:200;not null"`
+	FinalReportScore int    `json:"final_report_score" gorm:"size:200;not null"`
+	Email            string `json:"email" validate:"email" gorm:"size:200;not null"`
+	FileRequirement  string `json:"file_requirement" gorm:"size:200;not null"`
 }
 
 // BeforeCreate is a method for struct Role
