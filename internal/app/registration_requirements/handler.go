@@ -1,4 +1,4 @@
-package participants
+package registration_requirements
 
 import (
 	"net/http"

@@ -1,4 +1,4 @@
-package participants
+package schools
 
 import (
 	"github.com/Final-Project-Kelompok-3/participants/internal/middleware"

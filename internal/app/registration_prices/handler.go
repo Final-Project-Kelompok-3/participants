@@ -1,4 +1,4 @@
-package participants
+package registration_prices
 
 import (
 	"net/http"

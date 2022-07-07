@@ -1,4 +1,4 @@
-package participants
+package registration_prices
 
 import (
 	"github.com/Final-Project-Kelompok-3/participants/internal/middleware"

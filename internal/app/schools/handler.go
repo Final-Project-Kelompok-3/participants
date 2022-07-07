@@ -1,4 +1,4 @@
-package participants
+package schools
 
 import (
 	"net/http"
