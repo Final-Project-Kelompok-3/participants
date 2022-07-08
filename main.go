@@ -71,9 +71,9 @@ to use this flag:
 	conn := database.GetConnection()
 	f := factory.NewFactory(conn)
 	e := echo.New()
-	e.GET("/swagger/*", echoSwagger.WrapHandler)
 	http.NewHttp(e, f)
 	middleware.Init(e)
+	e.GET("/swagger/*", echoSwagger.WrapHandler)
 
 	e.Logger.Fatal(e.Start(":" + os.Getenv("APP_PORT")))
 }

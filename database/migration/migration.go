@@ -11,9 +11,15 @@ import (
 
 // please add new model in next index for consistency migrate and rollback
 var tables = []interface{}{
-	// &model.Role{},
-	// &model.User{},
+	&model.FileRequirements{},
+	&model.Levels{},
+	&model.ParticipantInfo{},
 	&model.Participants{},
+	// &model.Schools{},
+	&model.RegistrationPrices{},
+
+	// &model.RegistrationPeriods{},
+	// &model.RegistrationRequirements{},
 }
 
 func Migrate() {
