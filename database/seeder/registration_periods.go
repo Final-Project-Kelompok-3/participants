@@ -9,7 +9,7 @@ import (
 )
 
 func registrationPeriodsSeeder(conn *gorm.DB) {
-	var layout string = "2021-11-22"
+	var layout string = "2006-01-02"
 	start_date_from_str, err := time.Parse(layout, "2022-07-08")
 	if err != nil {
 		log.Println(err)

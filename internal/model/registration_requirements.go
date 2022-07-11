@@ -9,7 +9,7 @@ import (
 type RegistrationRequirements struct {
 	Model
 	RegistrationPeriodsID int                 `json:"registration_periods_id" gorm:"foreignKey:id;size:3;not null"`
-	FileRequirementsID    int                 `json:"file_requirements_id" gorm:"foreignKey:id;size:3;not null;unique"`
+	FileRequirementsID    int                 `json:"file_requirements_id" gorm:"foreignKey:id;size:3;not null"`
 	RegistrationPeriods   RegistrationPeriods `gorm:"references:RegistrationPeriods;constraint:OnUpdate:CASCADE,OnDelete:SET NULL;"`
 	FileRequirements      FileRequirements    `gorm:"references:FileRequirements;constraint:OnUpdate:CASCADE,OnDelete:SET NULL;"`
 }

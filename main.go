@@ -6,9 +6,12 @@ import (
 
 	"github.com/Final-Project-Kelompok-3/participants/database"
 	"github.com/Final-Project-Kelompok-3/participants/database/migration"
+	"github.com/Final-Project-Kelompok-3/participants/database/seeder"
+
 	"github.com/Final-Project-Kelompok-3/participants/internal/factory"
 	"github.com/Final-Project-Kelompok-3/participants/internal/http"
 	"github.com/Final-Project-Kelompok-3/participants/internal/middleware"
+
 	"github.com/joho/godotenv"
 	"github.com/labstack/echo/v4"
 

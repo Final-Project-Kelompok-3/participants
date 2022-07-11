@@ -10,8 +10,8 @@ type RegistrationPrices struct {
 	Model
 
 	RegistrationFee int64 `json:"registration_fee" gorm:"size:10;not null"`
-	SystemChange    int64 `json:"system_change" gorm:"size:10;not null;unique"`
-	Total           int64 `json:"total" gorm:"not null;unique"`
+	SystemChange    int64 `json:"system_change" gorm:"size:10;not null"`
+	Total           int64 `json:"total" gorm:"not null"`
 }
 
 // BeforeCreate is a method for struct Role

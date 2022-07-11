@@ -9,8 +9,8 @@ import (
 type RegistrationPeriods struct {
 	Model
 
-	SchoolsID            int       `json:"schools_id" gorm:"size:5;not null;unique"`
-	RegistrationPricesID int       `json:"registration_prices_id" gorm:"size:5;not null;unique"`
+	SchoolsID            int       `json:"schools_id" gorm:"size:5;not null"`
+	RegistrationPricesID int       `json:"registration_prices_id" gorm:"size:5;not null"`
 	StartDate            time.Time `json:"start_date" gorm:"size:30;not null"`
 	EndDate              time.Time `json:"end_date" gorm:"size:30;not null"`
 	Description          string    `json:"description" gorm:"size:300;not null"`
