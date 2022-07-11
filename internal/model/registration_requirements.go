@@ -10,8 +10,8 @@ type RegistrationRequirements struct {
 	Model
 	RegistrationPeriodsID uint `json:"registration_periods_id" gorm:"not null"`
 	FileRequirementsID    uint `json:"file_requirements_id" gorm:"not null"`
-	RegistrationPeriods   RegistrationPeriods
-	FileRequirements      FileRequirements
+	// RegistrationPeriods   RegistrationPeriods
+	// FileRequirements      FileRequirements
 }
 
 // BeforeCreate is a method for struct Role

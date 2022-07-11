@@ -2,6 +2,8 @@ package registration_periods
 
 import (
 	"context"
+	"log"
+	"time"
 
 	"github.com/Final-Project-Kelompok-3/participants/pkg/constant"
 	res "github.com/Final-Project-Kelompok-3/participants/pkg/util/response"
@@ -58,16 +60,24 @@ func (s *service) FindByID(ctx context.Context, payload *dto.ByIDRequest) (*mode
 }
 
 func (s *service) Create(ctx context.Context, payload *dto.CreateRegistrationPeriodsRequest) (string, error) {
-
+	var layout string = "2006-01-02"
+	start_date_from_str, err := time.Parse(layout, payload.StartDate)
+	if err != nil {
+		log.Println(err)
+	}
+	end_date_from_str, err := time.Parse(layout, payload.EndDate)
+	if err != nil {
+		log.Println(err)
+	}
 	var registration_periods = model.RegistrationPeriods{
-		StartDate:            payload.StartDate,
-		EndDate:              payload.EndDate,
+		StartDate:            start_date_from_str,
+		EndDate:              end_date_from_str,
 		Description:          payload.Description,
 		RegistrationPricesID: payload.RegistrationPricesID,
 		SchoolsID:            payload.SchoolsID,
 	}
 
-	err := s.RegistrationPeriodsRepository.Create(ctx, registration_periods)
+	err = s.RegistrationPeriodsRepository.Create(ctx, registration_periods)
 	if err != nil {
 		return "", res.ErrorBuilder(&res.ErrorConstant.InternalServerError, err)
 	}

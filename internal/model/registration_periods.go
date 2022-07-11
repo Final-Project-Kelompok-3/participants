@@ -15,8 +15,8 @@ type RegistrationPeriods struct {
 	EndDate              time.Time `json:"end_date" gorm:"size:30;not null"`
 	Description          string    `json:"description" gorm:"size:300;not null"`
 
-	Schools            Schools
-	RegistrationPrices RegistrationPrices
+	// 	Schools            Schools
+	// 	RegistrationPrices RegistrationPrices
 }
 
 // BeforeCreate is a method for struct Role

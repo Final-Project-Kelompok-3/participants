@@ -13,7 +13,7 @@ type Schools struct {
 	Name     string `json:"name" gorm:"size:255;not null"`
 	Address  string `json:"address" gorm:"size:255;not null"`
 
-	Levels Levels
+	// Levels Levels
 }
 
 // BeforeCreate iså a method for struct Role
