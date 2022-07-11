@@ -53,7 +53,8 @@ func main() {
 to use this flag:
 	use -migrate=migrate for migrate table
 	use -migrate=rollback for rollback table
-	use -migrate=status for get status migration`,
+	use -migrate=status for get status migration
+	use -migrate=seed for run seeder`,
 	)
 	flag.Parse()
 
@@ -65,6 +66,9 @@ to use this flag:
 		return
 	} else if m == "status" {
 		migration.Status()
+		return
+	} else if m == "seed" {
+		seeder.Seed()
 		return
 	}
 
