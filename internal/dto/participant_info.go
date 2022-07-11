@@ -10,7 +10,7 @@ type CreateParticipantInfoRequest struct {
 type UpdateParticipantInfoRequest struct {
 	NISN             *string `json:"nisn"`
 	FinalReportScore *int    `json:"final_report_score"`
-	Email            *string `json:"email" validate:"email"`
+	Email            *string `json:"email"`
 	FileRequirement  *string `json:"file_requirement"`
 }
 

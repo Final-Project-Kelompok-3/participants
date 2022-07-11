@@ -12,12 +12,12 @@ type CreateRegistrationPeriodsRequest struct {
 }
 
 type UpdateRegistrationPeriodsRequest struct {
-	SchoolsID            *uint `json:"schools_id" validate:"required"`
-	RegistrationPricesID *uint `json:"registration_prices_id" validate:"required"`
+	SchoolsID            *uint `json:"schools_id"`
+	RegistrationPricesID *uint `json:"registration_prices_id"`
 
-	StartDate   *time.Time `json:"start_date"`
-	EndDate     *time.Time `json:"end_date"`
-	Description *string    `json:"description"`
+	StartDate   *string `json:"start_date"`
+	EndDate     *string `json:"end_date"`
+	Description *string `json:"description"`
 }
 
 type RegistrationPeriodsResponse struct {

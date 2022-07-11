@@ -7,9 +7,9 @@ type CreateSchoolsRequest struct {
 }
 
 type UpdateSchoolsRequest struct {
-	LevelsID *uint   `json:"levels_id" validate:"required"`
-	Name     *string `json:"name" validate:"required"`
-	Address  *string `json:"address" validate:"required"`
+	LevelsID *uint   `json:"levels_id"`
+	Name     *string `json:"name"`
+	Address  *string `json:"address"`
 }
 
 type SchoolsResponse struct {
