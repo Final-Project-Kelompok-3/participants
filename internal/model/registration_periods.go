@@ -9,14 +9,14 @@ import (
 type RegistrationPeriods struct {
 	Model
 
-	SchoolsID            int       `json:"schools_id" gorm:"size:5;not null"`
-	RegistrationPricesID int       `json:"registration_prices_id" gorm:"size:5;not null"`
+	SchoolsID            uint      `json:"schools_id" gorm:"not null"`
+	RegistrationPricesID uint      `json:"registration_prices_id" gorm:"not null"`
 	StartDate            time.Time `json:"start_date" gorm:"size:30;not null"`
 	EndDate              time.Time `json:"end_date" gorm:"size:30;not null"`
 	Description          string    `json:"description" gorm:"size:300;not null"`
 
-	Schools            Schools            `gorm:"foreignKey:schools_id;constraint:OnUpdate:CASCADE,OnDelete:SET NULL;"`
-	RegistrationPrices RegistrationPrices `gorm:"foreignKey:registration_prices_id;constraint:OnUpdate:CASCADE,OnDelete:SET NULL;"`
+	Schools            Schools
+	RegistrationPrices RegistrationPrices
 }
 
 // BeforeCreate is a method for struct Role

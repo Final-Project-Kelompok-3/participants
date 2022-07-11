@@ -10,10 +10,11 @@ func Seed() {
 	levelsSeeder(conn)
 	participantInfoSeeder(conn)
 	participantsSeeder(conn)
-	// registrationPeriodsSeeder(conn)
+	registrationPeriodsSeeder(conn)
 	registrationPricesSeeder(conn)
-	// registrationRequirementsSeeder(conn)
-	// schoolsSeeder(conn)
+	registrationRequirementsSeeder(conn)
+	schoolsSeeder(conn)
+
 	// otherTableSeeder(conn)
 
 	// &model.FileRequirements{},

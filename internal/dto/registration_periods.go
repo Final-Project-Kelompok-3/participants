@@ -3,8 +3,8 @@ package dto
 import "time"
 
 type CreateRegistrationPeriodsRequest struct {
-	SchoolsID            int `json:"schools_id" validate:"required"`
-	RegistrationPricesID int `json:"registration_prices_id" validate:"required"`
+	SchoolsID            uint `json:"schools_id" validate:"required"`
+	RegistrationPricesID uint `json:"registration_prices_id" validate:"required"`
 
 	StartDate   time.Time `json:"start_date" validate:"required"`
 	EndDate     time.Time `json:"end_date" validate:"required"`
@@ -12,8 +12,8 @@ type CreateRegistrationPeriodsRequest struct {
 }
 
 type UpdateRegistrationPeriodsRequest struct {
-	SchoolsID            *int `json:"schools_id" validate:"required"`
-	RegistrationPricesID *int `json:"registration_prices_id" validate:"required"`
+	SchoolsID            *uint `json:"schools_id" validate:"required"`
+	RegistrationPricesID *uint `json:"registration_prices_id" validate:"required"`
 
 	StartDate   *string `json:"start_date"`
 	EndDate     *string `json:"end_date"`
@@ -21,9 +21,9 @@ type UpdateRegistrationPeriodsRequest struct {
 }
 
 type RegistrationPeriodsResponse struct {
-	ID                   int    `json:"id"`
-	SchoolsID            int    `json:"schools_id" validate:"required"`
-	RegistrationPricesID int    `json:"registration_prices_id" validate:"required"`
+	ID                   uint   `json:"id"`
+	SchoolsID            uint   `json:"schools_id" validate:"required"`
+	RegistrationPricesID uint   `json:"registration_prices_id" validate:"required"`
 	StartDate            string `json:"start_date" validate:"required"`
 	EndDate              string `json:"end_date" validate:"required"`
 	Description          string `json:"description" validate:"required"`
