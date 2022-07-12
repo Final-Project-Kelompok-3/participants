@@ -2,6 +2,6 @@
 
 docker build -t final-project-3/participants:1.0.0 .
 
-docker container create --name db_mysql_container --env MYSQL_ROOT_PASSWORD="root" -p 45678:45678 --mount "type=bind,source=/home/participants/Dev/mount,destination=/var/lib/mysql" mysql:latest
+# docker container create --name mysql_db_docker --env MYSQL_ROOT_PASSWORD="root" --mount "type=volume,source=participants,destination=/var/lib/mysql" --network "host" -p 3306:3306 mysql:latest
 
-docker run -d -it -p 8080:8080 --name=users --network="host"  final-project-3/participants:1.0.0
+docker run -d -it -p 8030:8030 --name=users --network="host"  final-project-3/participants:1.0.0

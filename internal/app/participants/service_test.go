@@ -112,7 +112,8 @@ func TestFindByID(t *testing.T) {
 	fmt.Println("Ini rows", rows)
 	num := uint(participants[0].ID)
 	println("ini num", participants[0].ID)
-	query := "select * from participants where pariticipants.id = ? "
+	// query := "select * from participants where pariticipants.id = ? "
+	query := "select * from participants where id = ? and participants.deleted_at is null order by participants.id limit 1 "
 
 	mock.ExpectQuery((query)).WillReturnRows(rows)
 	f := factory.NewFactory(db)
