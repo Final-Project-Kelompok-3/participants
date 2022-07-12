@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/usr/bin/env bash
 
 docker build -t final-project-3/participants:1.0.0 .
 

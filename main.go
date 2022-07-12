@@ -6,9 +6,12 @@ import (
 
 	"github.com/Final-Project-Kelompok-3/participants/database"
 	"github.com/Final-Project-Kelompok-3/participants/database/migration"
+	"github.com/Final-Project-Kelompok-3/participants/database/seeder"
+
 	"github.com/Final-Project-Kelompok-3/participants/internal/factory"
 	"github.com/Final-Project-Kelompok-3/participants/internal/http"
 	"github.com/Final-Project-Kelompok-3/participants/internal/middleware"
+
 	"github.com/joho/godotenv"
 	"github.com/labstack/echo/v4"
 
@@ -53,7 +56,8 @@ func main() {
 to use this flag:
 	use -migrate=migrate for migrate table
 	use -migrate=rollback for rollback table
-	use -migrate=status for get status migration`,
+	use -migrate=status for get status migration
+	use -migrate=seed for run seeder`,
 	)
 	flag.Parse()
 
@@ -65,6 +69,9 @@ to use this flag:
 		return
 	} else if m == "status" {
 		migration.Status()
+		return
+	} else if m == "seed" {
+		seeder.Seed()
 		return
 	}
 

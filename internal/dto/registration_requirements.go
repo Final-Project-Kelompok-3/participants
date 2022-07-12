@@ -1,17 +1,17 @@
 package dto
 
 type CreateRegistrationRequirementsRequest struct {
-	RegistrationPeriodsID int `json:"registration_period_id" validate:"required"`
-	FileRequirementsID    int `json:"file_requirement_id" validate:"required"`
+	RegistrationPeriodsID uint `json:"registration_periods_id" validate:"required"`
+	FileRequirementsID    uint `json:"file_requirements_id" validate:"required"`
 }
 
 type UpdateRegistrationRequirementsRequest struct {
-	RegistrationPeriodsID *int `json:"registration_period_id" validate:"required"`
-	FileRequirementsID    *int `json:"file_requirement_id" validate:"required"`
+	RegistrationPeriodsID *uint `json:"registration_periods_id"`
+	FileRequirementsID    *uint `json:"file_requirements_id"`
 }
 
 type RegistrationRequirementsResponse struct {
-	ID                    int `json:"id"`
-	RegistrationPeriodsID int `json:"registration_period_id" validate:"required"`
-	FileRequirementsID    int `json:"file_requirement_id" validate:"required"`
+	ID                    uint `json:"id"`
+	RegistrationPeriodsID uint `json:"registration_periods_id" validate:"required"`
+	FileRequirementsID    uint `json:"file_requirements_id" validate:"required"`
 }

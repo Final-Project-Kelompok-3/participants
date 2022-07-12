@@ -15,11 +15,11 @@ var tables = []interface{}{
 	&model.Levels{},
 	&model.ParticipantInfo{},
 	&model.Participants{},
-	// &model.Schools{},
+	&model.Schools{},
 	&model.RegistrationPrices{},
 
-	// &model.RegistrationPeriods{},
-	// &model.RegistrationRequirements{},
+	&model.RegistrationPeriods{},
+	&model.RegistrationRequirements{},
 }
 
 func Migrate() {

@@ -8,10 +8,10 @@ import (
 
 type RegistrationRequirements struct {
 	Model
-	RegistrationPeriodsID int                 `json:"registration_periods_id" gorm:"foreignKey:id;size:3;not null"`
-	FileRequirementsID    int                 `json:"file_requirements_id" gorm:"foreignKey:id;size:3;not null;unique"`
-	RegistrationPeriods   RegistrationPeriods `gorm:"references:RegistrationPeriods;constraint:OnUpdate:CASCADE,OnDelete:SET NULL;"`
-	FileRequirements      FileRequirements    `gorm:"references:FileRequirements;constraint:OnUpdate:CASCADE,OnDelete:SET NULL;"`
+	RegistrationPeriodsID uint `json:"registration_periods_id" gorm:"not null"`
+	FileRequirementsID    uint `json:"file_requirements_id" gorm:"not null"`
+	// RegistrationPeriods   RegistrationPeriods
+	// FileRequirements      FileRequirements
 }
 
 // BeforeCreate is a method for struct Role
